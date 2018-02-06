@@ -154,6 +154,9 @@ function greedyLin(G, giveaway_number, num_sim)
 	
 	println("numer of simulations : ")
 	println(num_sim_real)
+	println("number of active nodes : ")
+	println(sum(simulateLin(G, active)))
+	
 	return active
 	
 end
@@ -193,6 +196,9 @@ function greedyCasc(G, giveaway_number, num_sim)
 	
 	println("numer of simulations : ")
 	println(num_sim_real)
+	println("number of active nodes : ")
+	println(sum(simulateCasc(G, active)))
+
 	return active
 	
 end
@@ -201,5 +207,5 @@ end
 
 G = loadgraph("/home/chris/Uni/GraphMining/avgDist/Graph/3980.edges", "facebook", EdgeListFormat())
 
-@time res = greedyLin(G, 10, 1000)
-@time res = greedyCasc(G, 10, 1000)
+@time res = greedyLin(G, 10, 10000)
+@time res = greedyCasc(G, 10, 10000)
